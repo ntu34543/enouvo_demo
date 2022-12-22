@@ -6,7 +6,6 @@ import {
   Button,
   Modal,
   TouchableOpacity,
-  Pressable,
 } from 'react-native';
 import React, {useState} from 'react';
 
@@ -15,9 +14,6 @@ export default function ListItem(props) {
 
   const startDeleteHandler = () => {
     setModalIsVisible(true);
-  };
-  const endDeleteHandler = () => {
-    setModalIsVisible(false);
   };
 
   return (
@@ -41,38 +37,23 @@ export default function ListItem(props) {
             <Text style={styles.text_btn}>Delete</Text>
           </TouchableOpacity>
         </View>
-        <Modal
-          visible={modalIsVisible}
-          transparent
-          animationType="slide"
-          hardwareAccelerated
-          >
+        <Modal transparent animationType="slide" hardwareAccelerated>
           <View style={styles.centered_view}>
             <View style={styles.warning_modal}>
+              <View style={styles.warning_title}>
+                <Text>WARNING!</Text>
+              </View>
               <View style={styles.warning_body}>
-                <Text style={styles.textNotice}>
-                  Do you want to remove this profile
+                <Text style={styles.text}>
+                  Do you want to remove this
                 </Text>
               </View>
-              <View style={styles.btn_Modal}>
-                <Pressable
-                  onPress={endDeleteHandler}
-                  style={styles.warning_button}
-                  android_ripple={{color: 'black'}}>
-                  <Text style={styles.text}>Cancer</Text>
-                </Pressable>
-                <Text
-                  style={{
-                    borderRightColor: 'grey',
-                    borderRightWidth: 1,
-                  }}></Text>
-                <Pressable
-                  onPress={props.onDelete.bind(this, props.id)}
-                  style={styles.warning_button}
-                  android_ripple={{color: 'black'}}>
-                  <Text style={styles.text}>OK</Text>
-                </Pressable>
-              </View>
+              <Pressable
+                onPress={() => setShowWarning(false)}
+                style={styles.warning_button}
+                android_ripple={{color: 'black'}}>
+                <Text style={styles.text}>OK</Text>
+              </Pressable>
             </View>
           </View>
         </Modal>
@@ -128,44 +109,5 @@ const styles = StyleSheet.create({
   text_btn: {
     color: 'white',
     fontSize: 15,
-  },
-  // 3
-  btn_Modal: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    borderTopWidth: 1,
-    borderTopColor: 'grey',
-  },
-  centered_view: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#00000099',
-  },
-  warning_modal: {
-    width: 300,
-    height: 173,
-    backgroundColor: '#ffffff',
-    borderColor: 'black',
-    borderRadius: 20,
-  },
-  warning_body: {
-    height: 125,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  warning_button: {
-    // borderBottomLeftRadius: 20,
-    // borderBottomRightRadius: 20,
-    paddingVertical: 10,
-    paddingHorizontal: 45,
-  },
-  text: {
-    color: '#5184d8',
-    fontSize: 20,
-  },
-  textNotice: {
-    color: 'black',
-    fontSize: 17,
   },
 });

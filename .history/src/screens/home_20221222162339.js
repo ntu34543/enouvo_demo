@@ -68,7 +68,7 @@ export default function Home() {
       img: require('../assets/image/img_profile.jpg'),
     },
     {
-      id: 7,
+      id: '7',
       name: 'Naa Nii',
       followers: '',
       week: '47w',

@@ -67,7 +67,7 @@ export default function ListItem(props) {
                     borderRightWidth: 1,
                   }}></Text>
                 <Pressable
-                  onPress={props.onDelete.bind(this, props.id)}
+                  onPress={deleteItemHandle}
                   style={styles.warning_button}
                   android_ripple={{color: 'black'}}>
                   <Text style={styles.text}>OK</Text>

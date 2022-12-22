@@ -45,8 +45,7 @@ export default function ListItem(props) {
           visible={modalIsVisible}
           transparent
           animationType="slide"
-          hardwareAccelerated
-          >
+          hardwareAccelerated>
           <View style={styles.centered_view}>
             <View style={styles.warning_modal}>
               <View style={styles.warning_body}>
@@ -67,7 +66,7 @@ export default function ListItem(props) {
                     borderRightWidth: 1,
                   }}></Text>
                 <Pressable
-                  onPress={props.onDelete.bind(this, props.id)}
+                  onPress={() => setShowWarning(false)}
                   style={styles.warning_button}
                   android_ripple={{color: 'black'}}>
                   <Text style={styles.text}>OK</Text>
@@ -165,7 +164,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   textNotice: {
-    color: 'black',
+    color: '#5184d8',
     fontSize: 17,
   },
 });

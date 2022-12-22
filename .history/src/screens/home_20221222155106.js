@@ -26,49 +26,49 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([
     {
-      id: 1,
+      id: '1',
       name: 'Naa Nii',
       followers: 'Followed by 15k',
       week: '47w',
       img: require('../assets/image/avatar.jpg'),
     },
     {
-      id: 2,
+      id: '2',
       name: 'Naa Nii',
       followers: '',
       week: '47w',
       img: require('../assets/image/img_profile.jpg'),
     },
     {
-      id: 3,
+      id: '3',
       name: 'Naa Nii',
       followers: '',
       week: '47w',
       img: require('../assets/image/avatar.jpg'),
     },
     {
-      id: 4,
+      id: '4',
       name: 'Naa Nii',
       followers: '',
       week: '47w',
       img: require('../assets/image/img_profile.jpg'),
     },
     {
-      id: 5,
+      id: '5',
       name: 'Naa Nii',
       followers: '',
       week: '47w',
       img: require('../assets/image/avatar.jpg'),
     },
     {
-      id: 6,
+      id: '6',
       name: 'Naa Nii',
       followers: '',
       week: '47w',
       img: require('../assets/image/img_profile.jpg'),
     },
     {
-      id: 7,
+      id: '7',
       name: 'Naa Nii',
       followers: '',
       week: '47w',
@@ -76,12 +76,11 @@ export default function Home() {
     },
   ]);
 
-  const handleDelete = id => {
-    setData(currentData => {
-      console.log("ddsf");
-      return currentData.filter(data => data.id !== id);
-    });
-  };
+  const handleDelete = (id) => {
+    setData((currentData)=>{
+      return currentData.filter()
+    })
+  }
 
   const ListHeader = () => {
     return (

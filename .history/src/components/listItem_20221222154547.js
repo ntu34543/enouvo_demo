@@ -20,6 +20,8 @@ export default function ListItem(props) {
     setModalIsVisible(false);
   };
 
+  const handleDelete =
+
   return (
     <View style={styles.blocks}>
       <View style={styles.block_left}>
@@ -67,7 +69,7 @@ export default function ListItem(props) {
                     borderRightWidth: 1,
                   }}></Text>
                 <Pressable
-                  onPress={props.onDelete.bind(this, props.id)}
+                  onPress={handleDelete}
                   style={styles.warning_button}
                   android_ripple={{color: 'black'}}>
                   <Text style={styles.text}>OK</Text>

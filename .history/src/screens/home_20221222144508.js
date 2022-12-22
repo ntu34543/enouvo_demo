@@ -24,65 +24,7 @@ import ListItem from '../components/ListItem';
 
 export default function Home() {
   const [loading, setLoading] = useState(false);
-  const [data, setData] = useState([
-    {
-      id: 1,
-      name: 'Naa Nii',
-      followers: 'Followed by 15k',
-      week: '47w',
-      img: require('../assets/image/avatar.jpg'),
-    },
-    {
-      id: 2,
-      name: 'Naa Nii',
-      followers: '',
-      week: '47w',
-      img: require('../assets/image/img_profile.jpg'),
-    },
-    {
-      id: 3,
-      name: 'Naa Nii',
-      followers: '',
-      week: '47w',
-      img: require('../assets/image/avatar.jpg'),
-    },
-    {
-      id: 4,
-      name: 'Naa Nii',
-      followers: '',
-      week: '47w',
-      img: require('../assets/image/img_profile.jpg'),
-    },
-    {
-      id: 5,
-      name: 'Naa Nii',
-      followers: '',
-      week: '47w',
-      img: require('../assets/image/avatar.jpg'),
-    },
-    {
-      id: 6,
-      name: 'Naa Nii',
-      followers: '',
-      week: '47w',
-      img: require('../assets/image/img_profile.jpg'),
-    },
-    {
-      id: 7,
-      name: 'Naa Nii',
-      followers: '',
-      week: '47w',
-      img: require('../assets/image/avatar.jpg'),
-    },
-  ]);
-
-  const handleDelete = id => {
-    setData(currentData => {
-      console.log("ddsf");
-      return currentData.filter(data => data.id !== id);
-    });
-  };
-
+  const [data, setData] = useState([]);
   const ListHeader = () => {
     return (
       <>
@@ -138,34 +80,32 @@ export default function Home() {
   //   return <Button title={children} onPress={handlePress} />;
   // };
   return (
-    <FlatList
-      style={styles.body}
-      data={data}
-      refreshing={loading}
-      keyExtractor={(item, index) => item.id + index.toString()}
-      renderItem={itemData => {
-        return (
-          <ListItem
-            id={itemData.item.id}
-            name={itemData.item.name}
-            img={itemData.item.img}
-            week={itemData.item.week}
-            followers={itemData.item.followers}
-            onDelete={handleDelete}
-          />
-        );
-      }}
-      contentContainerStyle={[
-        {
-          flexGrow: 1,
-          justifyContent: 'center',
-        },
-      ]}
-      ListHeaderComponent={ListHeader}
-      ListEmptyComponent={EmptyRender}
-      alwaysBounceVertical={false}
-    />
-
+    // <FlatList
+    //   style={styles.body}
+    //   data={data}
+    //   refreshing={loading}
+    //   keyExtractor={(item, index) => item.id + index.toString()}
+    //   renderItem={itemData => {
+    //     return (
+    //       <ListItem
+    //         id={itemData.item.id}
+    //         name={itemData.item.name}
+    //         img={itemData.item.img}
+    //         week={itemData.item.week}
+    //         followers={itemData.item.followers}
+    //       />
+    //     );
+    //   }}
+    //   contentContainerStyle={[
+    //     {
+    //       flexGrow: 1,
+    //       justifyContent: 'center',
+    //     },
+    //   ]}
+    //   ListHeaderComponent={ListHeader}
+    //   ListEmptyComponent={EmptyRender}
+    //   alwaysBounceVertical={false}
+    // />
     // <KeyboardAvoidingView
     //   behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
     //   style={styles.container}>
@@ -181,7 +121,7 @@ export default function Home() {
     //     </View>
     //   </TouchableWithoutFeedback>
     // </KeyboardAvoidingView>
-
+    
     // <View style={styles.container}>
     //   <OpenURLButton url={supportedURL}>Open Supported URL</OpenURLButton>
     //   <OpenURLButton url={unsupportedURL}>Open Unsupported URL</OpenURLButton>
@@ -191,7 +131,7 @@ export default function Home() {
 
 const styles = StyleSheet.create({
   // 0
-  // container: {flex: 1, justifyContent: 'center', alignItems: 'center'},
+  container: {flex: 1, justifyContent: 'center', alignItems: 'center'},
   // 1
   // container: {
   //   flex: 1,
@@ -232,70 +172,70 @@ const styles = StyleSheet.create({
   //   color: 'white',
   // },
   // 2
-  container: {
-    flex: 1,
-    paddingLeft: 15,
-    paddingRight: 15,
-    backgroundColor: '#FFFFFF',
-  },
-  header: {
-    flex: 0.16,
-    borderBottomWidth: 1,
-    borderBottomColor: 'grey',
-    paddingBottom: 10,
-  },
-  body: {
-    flex: 1,
-    width: '100%',
-    paddingLeft: 15,
-    paddingRight: 15,
-    backgroundColor: '#FFFFFF',
-  },
-  header_title: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  heading: {
-    fontSize: 25,
-    fontWeight: 'bold',
-    color: 'black',
-  },
-  header_button: {
-    flexDirection: 'row',
-  },
-  block_button: {
-    marginLeft: 10,
-  },
-  buttonRadius: {
-    borderWidth: 1,
-    borderRadius: 50,
-  },
-  body_title: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    marginTop: 10,
-  },
-  heading_small: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: 'black',
-  },
-  heading_smaller: {
-    fontSize: 15,
-    fontWeight: 'bold',
-    color: 'blue',
-  },
-  emptyContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    textAlign: 'center',
-  },
-  emptytext: {
-    fontSize: 20,
-    fontWeight: '600',
-    color: 'black',
-    textAlign: 'center',
-  },
+  // container: {
+  //   flex: 1,
+  //   paddingLeft: 15,
+  //   paddingRight: 15,
+  //   backgroundColor: '#FFFFFF',
+  // },
+  // header: {
+  //   flex: 0.16,
+  //   borderBottomWidth: 1,
+  //   borderBottomColor: 'grey',
+  //   paddingBottom: 10,
+  // },
+  // body: {
+  //   flex: 1,
+  //   width: '100%',
+  //   paddingLeft: 15,
+  //   paddingRight: 15,
+  //   backgroundColor: '#FFFFFF',
+  // },
+  // header_title: {
+  //   flexDirection: 'row',
+  //   justifyContent: 'space-between',
+  // },
+  // heading: {
+  //   fontSize: 25,
+  //   fontWeight: 'bold',
+  //   color: 'black',
+  // },
+  // header_button: {
+  //   flexDirection: 'row',
+  // },
+  // block_button: {
+  //   marginLeft: 10,
+  // },
+  // buttonRadius: {
+  //   borderWidth: 1,
+  //   borderRadius: 50,
+  // },
+  // body_title: {
+  //   flexDirection: 'row',
+  //   alignItems: 'center',
+  //   justifyContent: 'space-between',
+  //   marginTop: 10,
+  // },
+  // heading_small: {
+  //   fontSize: 20,
+  //   fontWeight: 'bold',
+  //   color: 'black',
+  // },
+  // heading_smaller: {
+  //   fontSize: 15,
+  //   fontWeight: 'bold',
+  //   color: 'blue',
+  // },
+  // emptyContainer: {
+  //   flex: 1,
+  //   justifyContent: 'center',
+  //   alignItems: 'center',
+  //   textAlign: 'center',
+  // },
+  // emptytext: {
+  //   fontSize: 20,
+  //   fontWeight: '600',
+  //   color: 'black',
+  //   textAlign: 'center',
+  // },
 });

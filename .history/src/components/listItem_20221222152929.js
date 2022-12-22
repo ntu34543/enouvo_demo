@@ -45,12 +45,14 @@ export default function ListItem(props) {
           visible={modalIsVisible}
           transparent
           animationType="slide"
-          hardwareAccelerated
-          >
+          hardwareAccelerated>
           <View style={styles.centered_view}>
             <View style={styles.warning_modal}>
+              <View style={styles.warning_title}>
+                <Text>WARNING!</Text>
+              </View>
               <View style={styles.warning_body}>
-                <Text style={styles.textNotice}>
+                <Text style={styles.text}>
                   Do you want to remove this profile
                 </Text>
               </View>
@@ -61,13 +63,8 @@ export default function ListItem(props) {
                   android_ripple={{color: 'black'}}>
                   <Text style={styles.text}>Cancer</Text>
                 </Pressable>
-                <Text
-                  style={{
-                    borderRightColor: 'grey',
-                    borderRightWidth: 1,
-                  }}></Text>
                 <Pressable
-                  onPress={props.onDelete.bind(this, props.id)}
+                  onPress={() => setShowWarning(false)}
                   style={styles.warning_button}
                   android_ripple={{color: 'black'}}>
                   <Text style={styles.text}>OK</Text>
@@ -132,9 +129,9 @@ const styles = StyleSheet.create({
   // 3
   btn_Modal: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     borderTopWidth: 1,
-    borderTopColor: 'grey',
+    borderTopColor: "grey",
   },
   centered_view: {
     flex: 1,
@@ -144,28 +141,33 @@ const styles = StyleSheet.create({
   },
   warning_modal: {
     width: 300,
-    height: 173,
+    height: 300,
     backgroundColor: '#ffffff',
     borderColor: 'black',
     borderRadius: 20,
   },
+  warning_title: {
+    backgroundColor: 'yellow',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 50,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+  },
   warning_body: {
-    height: 125,
+    height: 203,
     justifyContent: 'center',
     alignItems: 'center',
   },
   warning_button: {
     // borderBottomLeftRadius: 20,
     // borderBottomRightRadius: 20,
-    paddingVertical: 10,
-    paddingHorizontal: 45,
+    // paddingVertical: 10,
+    // paddingHorizontal: 38,
+    border
   },
   text: {
     color: '#5184d8',
     fontSize: 20,
-  },
-  textNotice: {
-    color: 'black',
-    fontSize: 17,
-  },
+  }
 });

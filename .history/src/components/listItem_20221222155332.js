@@ -67,7 +67,7 @@ export default function ListItem(props) {
                     borderRightWidth: 1,
                   }}></Text>
                 <Pressable
-                  onPress={props.onDelete.bind(this, props.id)}
+                  onPress={props.onDelete}
                   style={styles.warning_button}
                   android_ripple={{color: 'black'}}>
                   <Text style={styles.text}>OK</Text>
@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#00000099',
+    backgroundColor: '#000000',
   },
   warning_modal: {
     width: 300,
